@@ -61,7 +61,11 @@ public class NamespaceAcquireLockAspect {
     this.bizConfig = bizConfig;
   }
 
-
+  /**
+   * args表达式介绍: https://blog.csdn.net/confirmAname/article/details/9739899
+   * args用于限制目标方法的参数, 该切入点将只匹配具有对应形参的方法, 且目标方法的参数值将被传入增强处理方法。
+   * 如args(account,..)表示目标方法至少有一个参数, 并且第一个参数是Account类型, 然后就可在advice中使用该account对象。
+   */
   //create item
   @Before("@annotation(PreAcquireNamespaceLock) && args(appId, clusterName, namespaceName, item, ..)")
   public void requireLockAdvice(String appId, String clusterName, String namespaceName,
