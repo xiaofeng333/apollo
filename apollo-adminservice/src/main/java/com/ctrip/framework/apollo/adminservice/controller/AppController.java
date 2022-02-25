@@ -71,6 +71,9 @@ public class AppController {
     adminService.deleteApp(entity, operator);
   }
 
+  /**
+   * PathVariable使用正则表达式的方式
+   */
   @PutMapping("/apps/{appId:.+}")
   public void update(@PathVariable String appId, @RequestBody App app) {
     if (!Objects.equals(appId, app.getAppId())) {
