@@ -50,6 +50,8 @@ public class ControllerExceptionTest {
 
   @Before
   public void setUp() {
+
+    // 体现了通过构造函数注入的好处
     appController = new AppController(appService, adminService);
   }
 

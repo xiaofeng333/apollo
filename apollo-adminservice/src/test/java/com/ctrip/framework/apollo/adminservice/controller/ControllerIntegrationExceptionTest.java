@@ -59,6 +59,7 @@ public class ControllerIntegrationExceptionTest extends AbstractControllerTest {
   public void setUp() {
     MockitoAnnotations.initMocks(this);
 
+    // ReflectionTestUtils类似ReflectionUtils, 详见https://blog.csdn.net/dengnanhua/article/details/106007779
     realAdminService = ReflectionTestUtils.getField(appController, "adminService");
 
     ReflectionTestUtils.setField(appController, "adminService", adminService);
