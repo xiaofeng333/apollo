@@ -26,6 +26,10 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  */
 public class ServletInitializer extends SpringBootServletInitializer {
 
+  /**
+   * SpringBootServletInitializer是WebApplicationInitializer的扩展, 可用于部署在Web容器上的传统WAR文件运行SpringApplication。
+   * 详见https://cloud.tencent.com/developer/article/1749644
+   */
   @Override
   protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
     return application.sources(AdminServiceApplication.class);
