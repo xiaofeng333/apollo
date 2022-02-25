@@ -40,6 +40,9 @@ public class AppControllerTest extends AbstractControllerTest {
     return "http://localhost:" + port + "/apps/";
   }
 
+  /**
+   * executionPhase可指定sql语句什么时机执行。
+   */
   @Test
   @Sql(scripts = "/controller/cleanup.sql", executionPhase = ExecutionPhase.AFTER_TEST_METHOD)
   public void testCheckIfAppIdUnique() {
