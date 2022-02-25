@@ -31,6 +31,9 @@ public class AdminServiceAutoConfiguration {
     this.bizConfig = bizConfig;
   }
 
+  /**
+   * 自定义过滤器filter的三种方式: https://www.jianshu.com/p/70d300037c36
+   */
   @Bean
   public FilterRegistrationBean<AdminServiceAuthenticationFilter> adminServiceAuthenticationFilter() {
     FilterRegistrationBean<AdminServiceAuthenticationFilter> filterRegistrationBean = new FilterRegistrationBean<>();
