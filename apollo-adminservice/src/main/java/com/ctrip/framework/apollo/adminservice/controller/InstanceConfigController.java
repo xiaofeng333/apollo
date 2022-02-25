@@ -55,6 +55,9 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/instances")
 public class InstanceConfigController {
+  /**
+   * Splitter用于替换String.split函数, 详见https://www.jianshu.com/p/fdd4204d580a
+   */
   private static final Splitter RELEASES_SPLITTER = Splitter.on(",").omitEmptyStrings()
       .trimResults();
   private final ReleaseService releaseService;
@@ -78,6 +81,8 @@ public class InstanceConfigController {
     List<InstanceDTO> instanceDTOs = Collections.emptyList();
 
     if (instanceConfigsPage.hasContent()) {
+
+      // Multimap是将键与任意多个值相关联的通用方法, 详见https://www.jianshu.com/p/f04e396124ca
       Multimap<Long, InstanceConfig> instanceConfigMap = HashMultimap.create();
       Set<String> otherReleaseKeys = Sets.newHashSet();
 
