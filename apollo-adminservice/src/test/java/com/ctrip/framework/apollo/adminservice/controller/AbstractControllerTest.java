@@ -38,6 +38,10 @@ public abstract class AbstractControllerTest {
   @Autowired
   private HttpMessageConverters httpMessageConverters;
 
+  /**
+   * RestTemplate简介: https://leokongwq.github.io/2018/05/30/spring-RestTemplate.html
+   * TestRestTemplate: https://books.didispace.com/spring-boot-reference/IV.%20Spring%20Boot%20features/40.4.4%20TestRestTemplate.html
+   */
   protected RestTemplate restTemplate = (new TestRestTemplate()).getRestTemplate();
 
   @PostConstruct
